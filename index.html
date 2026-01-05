@@ -35,17 +35,25 @@
       .section {
         padding: 1rem;
       }
+
+      .form-group {
+        display: flex;
+        gap: 0.5rem;
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <div class="section">
-        <h1>iframe 再帰デモ</h1>
+        <h1>iframe 再帰によるフィボナッチ計算デモ</h1>
         <p>
           これは、iframe 内に同じページを読み込むことで再帰的に表示するデモです。
         </p>
-        <input type="number" id="input" />
-        <button id="button">計算する</button>
+        <div class="form-group">
+          <input type="number" id="input" />
+          <button id="button">計算する</button>
+          <button id="reset-button">リセット</button>
+        </div>
         <p id="result"></p>
       </div>
       <iframe src="/recursion" width="100%" height="100vh" id="iframe"></iframe>

@@ -2,6 +2,8 @@ function main() {
   const buttonElement = document.querySelector<HTMLButtonElement>("#button");
   const iframeElement = document.querySelector<HTMLIFrameElement>("#iframe");
   const resultElement = document.querySelector<HTMLParagraphElement>("#result");
+  const resetButtonElement =
+    document.querySelector<HTMLButtonElement>("#reset-button");
 
   let start: number;
 
@@ -27,6 +29,12 @@ function main() {
 
     start = performance.now();
     iframeElement?.contentWindow?.postMessage({ type: "compute", n }, "*");
+  });
+
+  resetButtonElement?.addEventListener("click", () => {
+    resultElement!.textContent = "";
+
+    iframeElement!.src = iframeElement!.src;
   });
 }
 
