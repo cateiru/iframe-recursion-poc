@@ -2,12 +2,54 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>recursion</title>
+    <title>recursion example</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: aliceblue;
+      }
+      iframe {
+        border: none;
+        width: 100%;
+        height: 100vh;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+
+        > * {
+          flex: 1;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .container {
+          flex-direction: column;
+        }
+      }
+
+      .section {
+        padding: 1rem;
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <div class="container">
+      <div class="section">
+        <h1>iframe 再帰デモ</h1>
+        <p>
+          これは、iframe 内に同じページを読み込むことで再帰的に表示するデモです。
+        </p>
+        <input type="number" id="input" />
+        <button id="button">計算する</button>
+        <p id="result"></p>
+      </div>
+      <iframe src="/recursion" width="100%" height="100vh" id="iframe"></iframe>
+    </div>
+    <script type="module" src="/src/top.ts"></script>
   </body>
 </html>

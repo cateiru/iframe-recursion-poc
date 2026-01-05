@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recursion - iframe-poc</title>
+    <style>
+      html {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 0;
+        height: 100%;
+      }
+
+      .iframe-container {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        > * {
+          flex: 1;
+        }
+      }
+
+      iframe {
+        border: none;
+        width: 100%;
+        height: 100%;
+        min-height: 0px;
+      }
+
+      .last-display {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="iframe-container" id="iframe-container"></div>
+    <p class="last-display" id="last-display"></p>
+    <script type="module" src="/src/iframe.ts"></script>
+  </body>
+</html>
