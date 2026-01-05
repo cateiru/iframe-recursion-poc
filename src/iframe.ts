@@ -21,7 +21,7 @@ function main() {
       }
 
       const u = new URL(location.href);
-      u.pathname = "/recursion";
+      u.pathname = "/iframe-poc/recursion";
       u.searchParams.set("n", n.toString());
 
       const iframeElement1 = document.createElement("iframe");
